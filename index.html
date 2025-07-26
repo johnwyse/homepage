@@ -1,110 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>John Wyse</title>
+        <title>John Wyse - Software Developer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <style>
             :root {
-                --main: rgb(9, 8, 65);
+                --primary: #3b82f6;
+                --secondary: #64748b;
+                --accent: #10b981;
+                --text-light: #e2e8f0;
+                --text-muted: #94a3b8;
+                --bg-dark: #1e293b;
+                --bg-darker: #0f172a;
+                --bg-projects: #f8fafc;
+                --white: #ffffff;
+                --border: #334155;
+                --shadow: rgba(0, 0, 0, 0.3);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                background: var(--bg-darker);
             }
 
             body {
-                background-color: seashell;
-                color: var(--main);
+                font-family: 'Inter', sans-serif;
+                line-height: 1.6;
+                color: var(--text-light);
+                background: var(--bg-darker);
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container-fluid {
+                max-width: 1400px;
+                padding: 2rem 1rem;
+                margin: 0 auto;
+                background: var(--bg-darker);
+                min-height: 100vh;
+            }
+
+            .header-section {
+                padding: 3rem 2rem;
                 text-align: center;
-                font-family: Tahoma, sans-serif;
-                margin: 1rem;
+                margin-bottom: 3rem;
             }
 
-            #header > p {
-                text-align: center;
+            .header-section h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                color: var(--text-light);
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.02em;
             }
 
-            h3 {
-                margin-bottom: 1rem;
+            .header-section h2 {
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: var(--primary);
+                margin-bottom: 1.5rem;
             }
 
-            #contact > p {
-                text-align: center;
+            .contact-info {
+                font-size: 1rem;
+                color: var(--text-muted);
+                margin-bottom: 2rem;
             }
 
-            p, ul {
-                text-align: left;
-            }
-
-            .nav-item > a {
-                background-color: transparent;
-                border: none;
-                margin-left: 1rem;
-                margin-right: 1rem;
-                color:rgb(5, 9, 71);
-                font-size: 1.2rem;
-            }
-
-            .top > div, .top > div {
-                margin-top: 1.5rem;
-            }
-
-            .top {
-                width: 90%;
-                margin: auto;
-                vertical-align: top;
-            }
-
-            .flex {
+            .nav-links {
                 display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-                margin: auto;
-                vertical-align: top;
+                justify-content: center;
+                gap: 1rem;
             }
 
-            #bio {
-                max-width: 900px;
-                margin: auto;
+            .nav-links a {
+                color: var(--text-light);
+                text-decoration: none;
+                padding: 0.75rem 2rem;
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid var(--primary);
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                background: rgba(59, 130, 246, 0.3);
+                color: var(--white);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+            }
+
+            .bio-section {
+                padding: 2.5rem;
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .bio-section p {
+                max-width: 800px;
+                margin: 0 auto;
+                font-size: 1.1rem;
+                color: var(--text-muted);
+                line-height: 1.7;
+            }
+
+            .projects-section {
+                background: var(--bg-darker);
+                padding: 3rem 2rem;
+            }
+
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
             }
 
             .project {
-                width: 25vw;
-                min-width: 350px;
-                margin: justify;
-                margin-left: 1rem;
-                margin-right: 1rem;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-                padding: 1rem;
-                border: solid gray 3px;
-                border-radius: 10px;
-                vertical-align: top;
-                flex: 1 1 auto;
                 background-size: cover;
                 background-position: center;
-                box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .6);
+                border-radius: 16px;
+                padding: 2rem;
+                height: 360px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .project::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                transition: background 0.3s ease;
+            }
+
+            .project:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            }
+
+            .project:hover::before {
+                background: rgba(0,0,0,0.4);
+            }
+
+            .project-content {
+                position: relative;
+                z-index: 2;
+                color: white;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .project-header {
+                margin-bottom: 1rem;
+            }
+
+            .project-body {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 200px;
+            }
+
+            .project-description-section {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin-bottom: 1rem;
+            }
+
+            .project-badge {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: rgba(255,255,255,0.9);
+                color: var(--primary);
+                padding: 0.5rem 1rem;
+                border-radius: 25px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                backdrop-filter: blur(10px);
+                z-index: 3;
+            }
+
+            .project h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
                 color: white;
             }
 
-            .project > p {
+            .project-description {
                 font-size: 0.9rem;
+                line-height: 1.5;
+                opacity: 0.9;
+            }
+
+            .project-tech {
+                font-size: 0.85rem;
+                opacity: 0.8;
+                margin-bottom: 1rem;
+                padding: 0.5rem;
+                background: rgba(0,0,0,0.3);
+                border-radius: 6px;
+                border-left: 3px solid var(--primary);
+                margin-top: auto;
+            }
+
+            .project-links {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
             }
 
             .project-link {
-                margin: auto;
-                background-color: seashell;
-                border: solid black 1px;
-                border-radius: 5px;
-                width: 8rem;
-                margin-top: 0.5rem;
-                display: inline-block;
-                color: white;
-            }
-            .project-link:hover {
-                background-color: rgb(116, 151, 196);
+                background-color: rgba(255,255,255,0.2);
+                border: 1px solid rgba(255,255,255,0.3);
+                border-radius: 8px;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
             }
 
-            .project-link > a {
+            .project-link:hover {
+                background-color: rgba(255,255,255,0.3);
+                transform: translateY(-2px);
+            }
+
+            .project-link a {
+                color: white;
                 text-decoration: none;
-                color: var(--main);
+                font-weight: 500;
             }
 
             #property {
@@ -118,99 +264,149 @@
             #physics {
                 background-image: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/31/165681-minimalism-blue_background-glass-ball-ropes-broken-sphere-Isaac_Newton-physics.jpg");
             }
+
+            @media (max-width: 768px) {
+                .header-section h1 {
+                    font-size: 2.5rem;
+                }
+                
+                .nav-links {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.75rem;
+                }
+                
+                .nav-links a {
+                    width: 200px;
+                }
+                
+                .bio-section {
+                    padding: 2rem;
+                    margin-bottom: 2rem;
+                }
+                
+                .projects-section {
+                    padding: 2rem 1rem;
+                }
+                
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+                
+                .project {
+                    height: 340px;
+                }
+                
+                .header-section {
+                    padding: 2rem 1rem;
+                }
+            }
         </style>
     </head>
     <body>
-
-            <div class="top">
-                <div id="header">
-                    <nav class="navbar navbar-expand-sm justify-content-center navbar-light bg-transparent">
-                        
-                        <div class="justify-content-center">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="https://github.com/johnwyse" class="nav-link" target="_blank">GitHub</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.linkedin.com/in/johnwyse/" class="nav-link" target="_blank">LinkedIn</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <h1>JOHN WYSE</h1>
-                    <h5>Software Developer</h5>
-                    <p>john.w.wyse@gmail.com // (615) 509-3943</p>
+        <div class="container-fluid">
+            <div class="header-section">
+                <h1>JOHN WYSE</h1>
+                <h2>Software Developer</h2>
+                <div class="contact-info">john.w.wyse@gmail.com • (615) 509-3943</div>
+                <div class="nav-links">
+                    <a href="https://github.com/johnwyse" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/johnwyse/" target="_blank">LinkedIn</a>
                 </div>
-
-                <div id="bio" >
-                    <p>
-                        Full-stack software engineer with 3 years of experience and former high school physics/math teacher. Strong communicator with a focus on making technical concepts accessible. I enjoy collaborating to create solutions that balance the needs of users, developers, and the business.
-                    </p>
-                </div>
-
-            </div> 
-
-            <h2>Projects</h2>
-            
-            <div id="portfolio" class="flex">
-
-                <div class="project" id="property">
-                    <h5> Property Manager </h5>
-                    <p> A web app that connects property managers and tenants. Users can send messages, share photos, report and solve maintenance issues, and view rental documents. </p>
-                    <p> Technologies: 
-                        <ul>
-                            <li>Backend: Python, SQLite</li>
-                            <li>Frontend: JavaScript, HTML/CSS, Bootstrap</li>
-                            <li>Framework: Django</li>
-                        </ul>
-                    </p>
-                    <div class="project-link">
-                        <a href="https://johnwyse-property-manager.vercel.app/" target="_blank">Live Project</a>
-                    </div>
-                    <div class="project-link">
-                        <a href="https://github.com/johnwyse/property-manager" target="_blank">View Code</a>
-                    </div>
-                    <div class="project-link">
-                        <a href="https://youtu.be/K6PlQh34WoI" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-
-                <div class="project" id="physics">
-                    <h5> Physics </h5>
-                    <p> A mobile-friendly, single-page web app with references, examples, calculators, and practice problems (that give feedback) for physics topics. </p>
-                    <p> Technologies: JavaScript, HTML, CSS </p>
-                    <div class="project-link">
-                        <a href="https://wyse-physics.vercel.app/" target="_blank">Live Project</a>
-                    </div>
-                    <div class="project-link">
-                        <a href="https://github.com/johnwyse/Wyse-Physics" target="_blank">View Code</a>
-                    </div>
-                    <div class="project-link">
-                        <a href="https://youtu.be/rKj1I1CPMsU" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-
-                <div class="project" id="connect">
-                    <h5> Connect </h5>
-                    <p> A Connect Four-style game that allows users to play in the terminal on different size boards.  </p>
-                    <p> Technology: Python </p>
-                    <div class="project-link">
-                        <a href="https://replit.com/@JohnWyse/Connect" target="_blank">Live Project</a>
-                    </div>
-                    <div class="project-link">
-                        <a href="https://github.com/johnwyse/Connect" target="_blank">View Code</a>
-                    </div>
-                    <div class="project-link">
-                        <a href="https://youtu.be/pOx1JPLIpqA" target="_blank">Video Demo</a>
-                    </div>
-                </div>
-                
             </div>
 
+            <div class="bio-section">
+                <p>Full-stack software engineer with 3 years of experience and former high school physics/math teacher. Strong communicator with a focus on making technical concepts accessible. I enjoy collaborating to create solutions that balance the needs of users, developers, and the business.</p>
+            </div>
 
+            <div class="projects-section">
+                <div class="projects-grid">
+                    <div class="project" id="property">
+                        <div class="project-badge">Web App</div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Property Manager</h3>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-description-section">
+                                    <div class="project-description">
+                                        A web app that connects property managers and tenants. Users can send messages, share photos, report and solve maintenance issues, and view rental documents.
+                                    </div>
+                                </div>
+                                <div class="project-tech">Python • Django • JavaScript • SQLite</div>
+                                <div class="project-links">
+                                    <div class="project-link">
+                                        <a href="https://johnwyse-property-manager.vercel.app/" target="_blank">Live Project</a>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://github.com/johnwyse/property-manager" target="_blank">View Code</a>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://youtu.be/K6PlQh34WoI" target="_blank">Video Demo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                    <div class="project" id="physics">
+                        <div class="project-badge">Education</div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Physics</h3>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-description-section">
+                                    <div class="project-description">
+                                        A mobile-friendly, single-page web app with references, examples, calculators, and practice problems (that give feedback) for physics topics.
+                                    </div>
+                                </div>
+                                <div class="project-tech">JavaScript • HTML • CSS</div>
+                                <div class="project-links">
+                                    <div class="project-link">
+                                        <a href="https://wyse-physics.vercel.app/" target="_blank">Live Project</a>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://github.com/johnwyse/Wyse-Physics" target="_blank">View Code</a>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://youtu.be/rKj1I1CPMsU" target="_blank">Video Demo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project" id="connect">
+                        <div class="project-badge">Game</div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Connect</h3>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-description-section">
+                                    <div class="project-description">
+                                        A Connect Four-style game that allows users to play in the terminal on different size boards.
+                                    </div>
+                                </div>
+                                <div class="project-tech">Python</div>
+                                <div class="project-links">
+                                    <div class="project-link">
+                                        <a href="https://replit.com/@JohnWyse/Connect" target="_blank">Live Project</a>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://github.com/johnwyse/Connect" target="_blank">View Code</a>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://youtu.be/pOx1JPLIpqA" target="_blank">Video Demo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
