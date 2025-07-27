@@ -113,9 +113,90 @@
                 line-height: 1.7;
             }
 
+            .technologies-section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .technologies-section h2 {
+                text-align: center;
+                font-size: 2rem;
+                font-weight: 600;
+                color: var(--text-light);
+                margin-bottom: 2rem;
+                letter-spacing: -0.01em;
+            }
+
+            .tech-categories {
+                max-width: 1000px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .tech-category {
+                background: rgba(59, 130, 246, 0.05);
+                border: 1px solid rgba(59, 130, 246, 0.2);
+                border-radius: 12px;
+                padding: 1.5rem;
+                transition: all 0.3s ease;
+            }
+
+            .tech-category:hover {
+                background: rgba(59, 130, 246, 0.08);
+                border-color: rgba(59, 130, 246, 0.3);
+                transform: translateY(-2px);
+            }
+
+            .tech-category h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--primary);
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .tech-category-icon {
+                font-size: 1.4rem;
+            }
+
+            .tech-items {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .tech-item {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 6px;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+                color: var(--text-light);
+                transition: all 0.3s ease;
+            }
+
+            .tech-item:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(59, 130, 246, 0.4);
+                color: var(--white);
+            }
+
             .projects-section {
                 background: var(--bg-darker);
                 padding: 2rem 2rem;
+            }
+
+            .projects-section h2 {
+                text-align: center;
+                font-size: 2rem;
+                font-weight: 600;
+                color: var(--text-light);
+                margin-bottom: 2rem;
+                letter-spacing: -0.01em;
             }
 
             .projects-grid {
@@ -284,6 +365,15 @@
                     padding: 2rem;
                     margin-bottom: 2rem;
                 }
+
+                .technologies-section {
+                    padding: 2rem 1rem;
+                }
+
+                .tech-categories {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
                 
                 .projects-section {
                     padding: 2rem 1rem;
@@ -320,7 +410,64 @@
                 <p>Full-stack software engineer with 3 years of experience and former high school physics/math teacher. Strong communicator with a focus on making technical concepts accessible. I enjoy collaborating to create solutions that balance the needs of users, developers, and the business.</p>
             </div>
 
+            <div class="technologies-section">
+                <h2>Skills & Technologies</h2>
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3><span class="tech-category-icon">🎨</span>Front-end</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">JavaScript</div>
+                            <div class="tech-item">TypeScript</div>
+                            <div class="tech-item">Vue.js</div>
+                            <div class="tech-item">React</div>
+                            <div class="tech-item">Next.js</div>
+                            <div class="tech-item">HTML / CSS</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3><span class="tech-category-icon">⚙️</span>Back-end</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">Python</div>
+                            <div class="tech-item">Node.js</div>
+                            <div class="tech-item">C# / .NET</div>
+                            <div class="tech-item">Django</div>
+                            <div class="tech-item">Flask</div>
+                            <div class="tech-item">SQL</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3><span class="tech-category-icon">☁️</span>Cloud / Infra</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">AWS Lambda</div>
+                            <div class="tech-item">Serverless</div>
+                            <div class="tech-item">DynamoDB</div>
+                            <div class="tech-item">CloudWatch</div>
+                            <div class="tech-item">API Gateway</div>
+                            <div class="tech-item">SQS</div>
+                            <div class="tech-item">EventBridge</div>
+                            <div class="tech-item">S3</div>
+                            <div class="tech-item">AWS QuickSight</div>
+                            <div class="tech-item">Docker</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3><span class="tech-category-icon">🔧</span>Tools</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">Git</div>
+                            <div class="tech-item">Datadog</div>
+                            <div class="tech-item">Jira</div>
+                            <div class="tech-item">Confluence</div>
+                            <div class="tech-item">Cursor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="projects-section">
+                <h2>Projects (December 2021 - March 2022)</h2>
                 <div class="projects-grid">
                     <div class="project" id="property">
                         <div class="project-badge">Web App</div>
