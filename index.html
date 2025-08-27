@@ -53,7 +53,7 @@
             .header-section {
                 padding: 1.5rem 2rem;
                 text-align: center;
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
             }
 
             .header-section h1 {
@@ -130,10 +130,10 @@
             }
 
             .tech-categories {
-                max-width: 1000px;
+                max-width: 1200px;
                 margin: 0 auto;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 1.5rem;
             }
 
@@ -197,20 +197,13 @@
                 font-size: 2rem;
                 font-weight: 600;
                 color: var(--text-light);
-                margin-bottom: 0.5rem;
-                letter-spacing: -0.01em;
-            }
-
-            .projects-section h5 {
-                text-align: center;
-                color: var(--text-muted);
-                font-weight: 400;
                 margin-bottom: 2.5rem;
+                letter-spacing: -0.01em;
             }
 
             .projects-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
                 max-width: 1200px;
                 margin: 0 auto;
@@ -344,15 +337,19 @@
             }
 
             #property {
-                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeucilq2NOZ9dINgj7heALZIxIRNUmFmDXk1L6pUfdKH7I-c4vjECl7esIMtWoaYEDewA&usqp=CAU");
+                background-image: url("https://cdn-icons-png.flaticon.com/512/10751/10751558.png");
             }
 
             #connect {
-                background-image: url("https://previews.123rf.com/images/kebox/kebox1507/kebox150700248/42827058-traditional-dotted-wallpaper-with-red-and-blue-dots-and-white-background.jpg");
+                background-image: url("https://img.freepik.com/premium-vector/red-blue-dots-vector-background-red-blue-doted-background_302321-1760.jpg");
             }
 
             #physics {
                 background-image: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/31/165681-minimalism-blue_background-glass-ball-ropes-broken-sphere-Isaac_Newton-physics.jpg");
+            }
+
+            #garden {
+                background-image: url("https://www.kroger.com/product/images/large/front/0000000094799");
             }
 
             @media (max-width: 768px) {
@@ -416,7 +413,7 @@
             </div>
 
             <div class="bio-section">
-                <p>Full-stack software engineer with 3 years of experience and former high school physics/math teacher. Strong communicator with a focus on making technical concepts accessible. I enjoy collaborating to create solutions that balance the needs of users, developers, and the business.</p>
+                <p>Full-stack software engineer with 3.5 years of experience and former high school physics/math teacher. Strong communicator with a focus on making technical concepts accessible. I enjoy collaborating to create solutions that balance the needs of users, developers, and the business.</p>
             </div>
 
             <div class="technologies-section">
@@ -477,8 +474,33 @@
 
             <div class="projects-section">
                 <h2>Projects</h2>
-                <h5>(December 2021 - March 2022)</h5>
                 <div class="projects-grid">
+
+                    <div class="project" id="garden">
+                        <div class="project-badge">Design Tool</div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Garden Layout Designer</h3>
+                            </div>
+                            <div class="project-body">
+                                <div class="project-description-section">
+                                    <div class="project-description">
+                                        An interactive web app that helps users design garden layouts with AI-powered recommendations.
+                                    </div>
+                                </div>
+                                <div class="project-tech">React • OpenAI</div>
+                                <div class="project-links">
+                                    <div class="project-link">
+                                        <a href="https://garden-nu-ten.vercel.app/" target="_blank">Live Project</a>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="https://github.com/johnwyse/garden" target="_blank">View Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project" id="property">
                         <div class="project-badge">Web App</div>
                         <div class="project-content">
@@ -491,7 +513,7 @@
                                         A web app that connects property managers and tenants. Users can send messages, share photos, report and solve maintenance issues, and view rental documents.
                                     </div>
                                 </div>
-                                <div class="project-tech">Python • Django • JavaScript • SQLite</div>
+                                <div class="project-tech">Python • Django • JavaScript • PostgreSQL</div>
                                 <div class="project-links">
                                     <div class="project-link">
                                         <a href="https://property-manager-two-flax.vercel.app/" target="_blank">Live Project</a>
